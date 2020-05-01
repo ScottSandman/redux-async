@@ -1,18 +1,18 @@
 import { connect } from "react-redux";
 import SignIn from "../components/SignIn";
-import { attemptLoginInjector } from "../actions/actions";
+import { attemptLoginInjector, logOut } from "../actions/actions";
 
 const mapStateToProps = (state) => {
   return {
-    username: state.username,
-    password: state.password,
-    status: state.status,
+    isLoggedIn: state.attemptLoginReducer.isLoggedIn,
+    username: state.attemptLoginReducer.username,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     boundAttemptLogin: attemptLoginInjector(dispatch),
+    boundLogOut: () => dispatch(logOut()),
   };
 };
 

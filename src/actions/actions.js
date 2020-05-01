@@ -15,6 +15,7 @@ export const BLOG_REQUEST_ERROR = "BLOG_REQUEST_ERROR";
 export const LOGIN_REQUEST_ATTEMPTING = "LOGIN_REQUEST_ATTEMPTING";
 export const LOGIN_REQUEST_SUCCESS = "LOGIN_REQUEST_SUCCESS";
 export const LOGIN_REQUEST_ERROR = "LOGIN_REQUEST_ERROR";
+export const LOGOUT = "LOGOUT";
 
 //action creators
 
@@ -31,11 +32,31 @@ export function hideBlogs() {
   };
 }
 
-// export function setLogin() {
-//     return {
-//         type: LOGIN_REQUEST_ATTEMPTING,
-//     }
-// }
+function loginRequestAttempting(username, password) {
+  return {
+    type: LOGIN_REQUEST_ATTEMPTING,
+    username: username,
+    password: password,
+  };
+}
+
+function loginRequestSuccess() {
+  return {
+    type: LOGIN_REQUEST_SUCCESS,
+  };
+}
+
+function loginRequestError() {
+  return {
+    type: LOGIN_REQUEST_ERROR,
+  };
+}
+
+export function logOut() {
+  return {
+    type: LOGOUT,
+  };
+}
 
 async function getBlogs(dispatch) {
   dispatch({ type: BLOG_REQUEST });
@@ -57,8 +78,8 @@ async function getBlogs(dispatch) {
 }
 
 async function attemptLogin(dispatch, username, password) {
-  dispatch({ type: LOGIN_REQUEST_ATTEMPTING });
-  console.log("attemptingLogin", username, password);
+  dispatch(loginRequestAttempting(username, password));
+  //   console.log("attemptingLogin", username, password);
   try {
     const response = await axios({
       method: "post",
@@ -72,10 +93,10 @@ async function attemptLogin(dispatch, username, password) {
         password: password,
       },
     });
-    console.log("login attempt response", response);
-    dispatch({ type: LOGIN_REQUEST_SUCCESS });
+    // console.log("login attempt response", response);
+    dispatch(loginRequestSuccess());
   } catch (error) {
-    dispatch({ type: LOGIN_REQUEST_ERROR });
+    dispatch(loginRequestError());
     console.log(error);
   }
 }
