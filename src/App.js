@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 import BlogListContainer from "./containers/BlogListContainer";
-import SignIn from "./components/SignIn";
+import SignInContainer from "./containers/SignInContainer";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SignIn />
+        <SignInContainer />
         <BlogListContainer />
       </header>
     </div>

@@ -3,9 +3,10 @@ import { getBlogsInjector, hideBlogs } from "../actions/actions";
 import BlogList from "../components/BlogList";
 
 const mapStateToProps = (state) => {
+  console.log("state", state);
   return {
-    blogs: state.blogs,
-    status: state.status,
+    blogs: state.setBlogsReducer.blogs,
+    status: state.setBlogsReducer.status,
   };
 };
 

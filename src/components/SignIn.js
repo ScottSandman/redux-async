@@ -2,6 +2,7 @@ import React from "react";
 
 export default function SignIn({ boundAttemptLogin }) {
   let username, password;
+  console.log(boundAttemptLogin);
   return (
     <div>
       <form
