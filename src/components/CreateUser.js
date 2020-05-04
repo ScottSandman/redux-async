@@ -1,22 +1,28 @@
 import React from "react";
-import { Link, Redirect } from "@reach/router";
-import WelcomeContainer from "../containers/WelcomeContainer";
-import MainContent from "./MainContent";
 
-export default function SignIn({
-  boundAttemptLogin,
+export default function CreateUser({
+  boundCreateUser,
   isLoggedIn,
   username,
   boundLogOut,
 }) {
   let userInput, password;
-  if (isLoggedIn) return <MainContent />;
+  if (isLoggedIn)
+    return (
+      <div>
+        <div>Welcome, {username} You are logged in.</div>
+        <button type="submit" onClick={() => boundLogOut()}>
+          Log Out
+        </button>
+      </div>
+    );
   return (
     <div>
+      <h3>Create an Account</h3>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          boundAttemptLogin(userInput.value, password.value);
+          boundCreateUser(userInput.value, password.value);
           userInput = "";
           password = "";
         }}
@@ -33,11 +39,7 @@ export default function SignIn({
           ref={(node) => (password = node)}
         />
         <br />
-        <button type="submit">Log In</button>
-        <br />
-        <Link to="createuser">Sign Up Here</Link>
-        <br />
-        <br />
+        <button type="submit">Create Account</button>
       </form>
     </div>
   );

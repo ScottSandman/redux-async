@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SignIn from "../components/SignIn";
-import { attemptLoginInjector, logOut } from "../actions/actions";
+import { attemptLoginInjector, logOut } from "../actions/SignInActions";
 
 const mapStateToProps = (state) => {
   return {
