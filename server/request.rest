@@ -2,8 +2,8 @@ POST http://localhost:4000/user
 Content-Type: application/json
 
 {
-    "username": "Thomasina",
-    "password": "pw"
+    "username": "Myrtle",
+    "password": "pw2"
 }
 
 ###
@@ -12,20 +12,20 @@ POST http://localhost:4000/users/login
 Content-Type: application/json
 
 {
-    "username": "Tiny",
-    "password": "pw"
+    "username": "Steve",
+    "password": "woof"
 }
 
 ###
 
 POST http://localhost:4000/blogPosts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbnkiLCJpYXQiOjE1ODc1ODQ4MzB9.MJAD9OItCLGPw4vv74bBTwWSvND0ZPi3GTdy05u7emg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0ZXZlIiwiaWF0IjoxNTg4NjAxMTU1fQ.2y2qCq4IgtzDyhkYGtm_7XNGHHkz3Wphw5FQZZqJ4Hg
 Content-Type: application/json
 
 {
-    "author_id": 1,
-    "title": "LA is whatever",
-    "post": "ipsum loris adlkjasfdlk;j"
+    "author_id": 3,
+    "title": "School of Rock",
+    "post": "underrated film."
 }
 
 ###

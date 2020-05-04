@@ -10,12 +10,7 @@ export default function BlogList({
   console.log("blogs", blogs);
   if (!blogs.length) {
     if (status === BLOG_REQUEST_ERROR) {
-      return (
-        <div>
-          Sorry, There was an error processing your request.
-          <button onClick={() => boundGetBlogs()}>Request Blogs</button>
-        </div>
-      );
+      return <div>Sorry, There was an error processing your request.</div>;
     }
     return <button onClick={() => boundGetBlogs()}>Request Blogs</button>;
   }

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getBlogsInjector, hideBlogs } from "../actions/actions";
+import { getBlogsInjector, hideBlogs } from "../actions/BlogActions";
 import BlogList from "../components/BlogList";
 
 const mapStateToProps = (state) => {

@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(haltOnTimeout);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(haltOnTimeout);
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "http://localhost:3001" }));
 app.use(haltOnTimeout);
 
 function haltOnTimeout(request, response, next) {
